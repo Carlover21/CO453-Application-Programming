@@ -5,7 +5,7 @@ namespace ConsoleAppProject.App01
     
     public class DistanceConverter
     {
-        static void Main(string[] args)
+        public void Run()
         {
             Console.WriteLine("Welcome to Advanced Distance Converter!");
 

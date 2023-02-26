@@ -1,8 +1,10 @@
-﻿namespace BMICalculator
+﻿using System;
+
+namespace ConsoleAppProject
 {
-    class Program
+    public class BMI
     {
-        static void Main(string[] args)
+        public void Run()
         {
             Console.WriteLine("Welcome to the Advanced BMI Calculator!");
 
