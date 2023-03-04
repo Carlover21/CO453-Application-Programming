@@ -2,9 +2,17 @@
 
 namespace ConsoleAppProject.App01
 {
-    
+
     public class DistanceConverter
     {
+        public string inputUnit;
+        public string outputUnit;
+        public double distance;
+        public double result;
+
+    
+
+    
         public void Run()
         {
             Console.WriteLine("Welcome to Advanced Distance Converter!");
@@ -12,17 +20,17 @@ namespace ConsoleAppProject.App01
             // Display the list of available units
             Console.WriteLine("Please select the input unit:");
             DisplayUnitList();
-            string inputUnit = Console.ReadLine();
+            inputUnit = Console.ReadLine();
 
             Console.WriteLine("Please select the output unit:");
             DisplayUnitList();
-            string outputUnit = Console.ReadLine();
+            outputUnit = Console.ReadLine();
 
             Console.WriteLine("Please enter the distance value:");
-            double distance = double.Parse(Console.ReadLine());
+            distance = double.Parse(Console.ReadLine());
 
             // Convert the distance to the desired unit
-            double result = ConvertDistance(distance, inputUnit, outputUnit);
+            result = ConvertDistance();
 
             // Display the result
             Console.WriteLine("{0} {1} is equal to {2} {3}", distance, inputUnit, result, outputUnit);
@@ -42,35 +50,36 @@ namespace ConsoleAppProject.App01
         }
 
         // Method to convert the distance to the desired unit
-        static double ConvertDistance(double distance, string inputUnit, string outputUnit)
+        public double ConvertDistance()
         {
+
             double result = 0;
 
             // Use a switch statement to handle each conversion case
             switch (inputUnit)
             {
-                case "km":
+                case "1":
                     switch (outputUnit)
                     {
-                        case "m":
+                        case "2":
                             result = distance * 1000;
                             break;
-                        case "cm":
+                        case "3":
                             result = distance * 100000;
                             break;
-                        case "mm":
+                        case "4":
                             result = distance * 1000000;
                             break;
-                        case "mi":
+                        case "5":
                             result = distance * 0.621371;
                             break;
-                        case "yd":
+                        case "6":
                             result = distance * 1093.61;
                             break;
-                        case "ft":
+                        case "7":
                             result = distance * 3280.84;
                             break;
-                        case "in":
+                        case "8":
                             result = distance * 39370.1;
                             break;
                         default:
@@ -123,6 +132,7 @@ namespace ConsoleAppProject.App01
             }
 
             return result;
+
         }
 
 
