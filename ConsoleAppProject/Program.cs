@@ -21,9 +21,9 @@ namespace ConsoleAppProject
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine();
-            Console.WriteLine(" =================================================");
-            Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! ");
-            Console.WriteLine(" =================================================");
+            Console.WriteLine(" ====================================================================");
+            Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! By Rayan Hamour    ");
+            Console.WriteLine(" ====================================================================");
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("Witch app would you like to choose:");
