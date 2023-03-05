@@ -32,12 +32,10 @@ namespace ConsoleAppProject.App01
             // Convert the distance to the desired unit
             result = ConvertDistance();
 
-            // Display the result
-            Console.WriteLine("{0} {1} is equal to {2} {3}", distance, inputUnit, result, outputUnit);
-        }
+           
 
-        // Method to display the list of available units
-        static void DisplayUnitList()
+            // Method to display the list of available units
+            static void DisplayUnitList()
         {
             Console.WriteLine("1. Kilometer (km)");
             Console.WriteLine("2. Meter (m)");
@@ -132,10 +130,13 @@ namespace ConsoleAppProject.App01
             }
 
             return result;
+                
+            }
+            // Output the result
+            Console.WriteLine("{0} {1} is equal to {2} {3}.", distance, inputUnit, result, outputUnit);
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+
 
         }
-
-
-
-    }
 }

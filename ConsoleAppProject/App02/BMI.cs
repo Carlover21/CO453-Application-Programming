@@ -7,7 +7,7 @@ namespace ConsoleAppProject
         public void Run()
         {
             Console.WriteLine("Welcome to the Advanced BMI Calculator!");
-
+            Console.WriteLine("By Rayan Hamour");   
             // Ask user for unit of measurement preference
             Console.WriteLine("Please select your preferred unit of measurement:");
             Console.WriteLine("1. Imperial (pounds, inches)");
