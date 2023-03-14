@@ -1,6 +1,4 @@
-﻿using ConsoleAppProject.App01;
-
-using ConsoleAppProject.App03;
+﻿using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -29,12 +27,7 @@ namespace ConsoleAppProject
             Console.Write("Witch app would you like to choose:");
             string choice = Console.ReadLine();
 
-            if (choice == "1")
-            {
-                DistanceConverter converter = new DistanceConverter();
-                converter.Run();
-            }
-            else if (choice == "2")
+            if (choice == "2")
             {
                 BMI calculator = new BMI();
                 calculator.Run();
