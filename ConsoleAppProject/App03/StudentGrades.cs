@@ -25,6 +25,28 @@ namespace ConsoleAppProject.App03
             Name();
             GetStudentMarks();
         }
+        public string ConvertToMarks()
+        {
+            switch (Marks)
+            {
+                case int n when (n >= 70):
+                    return "A"
+                case int n when (n >= 60):
+                    return "B"
+                case int n when (n >= 50):
+                    return "C"
+                case int n when (n >= 40):
+                    return "D"
+                case int n when (n >= 0):
+                    return "F"
+                default:
+                    return "Invalid Mark Please Try Again";
+            }
+        }
+        public string Name()
+        {
+            return$ "{Name}  {Surname}";
+        }
         public void GetStudentMarks()
         {
             List<StudentMarks> studentMarksList = new List<StudentMarks>();
@@ -33,7 +55,10 @@ namespace ConsoleAppProject.App03
             double mean = 0;
             for (int i=0; i<Max_Students; i++)
             {
-                Console.WriteLine(""
+                Console.WriteLine("Enter the name of the student:   ");
+                string name = Console.ReadLine();
+
+                StudentMarks 
             }
         
         }
