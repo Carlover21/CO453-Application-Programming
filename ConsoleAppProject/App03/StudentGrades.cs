@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using ConsoleAppProject.Helpers;
@@ -21,6 +22,13 @@ namespace ConsoleAppProject.App03
     public class StudentGrades
 
     {
+        public const int LowestMark = 0;
+        public const int LowestGradeD = 40;
+        public const int LowestGradeC = 50;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeA = 70;
+        public const int HighestMark = 100;
+
         //Propertise
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
@@ -43,9 +51,9 @@ namespace ConsoleAppProject.App03
         {
             OutputHeading();
             selectMenu();
-            InputStudnetName();
-            InputMarks();
-            OutputMarks();
+            //InputStudnetName();
+            //InputMarks();
+            //OutputMarks();
         }
 
         public void selectMenu()
@@ -73,13 +81,16 @@ namespace ConsoleAppProject.App03
                 case 4:
                     OutputStats();
                     break;
+                case 5:
+                    //OutputStats();
+                    break;
             }
         }
         public void InputStudnetName()
 
         {
 
-            Students = new string[10];
+            Students = new string[3];
 
             for (int i = 0; i < Students.Length; i++)
 
@@ -137,6 +148,12 @@ namespace ConsoleAppProject.App03
                     Marks[i] = mark;
                 }
             }
+            Console.WriteLine();
+            Console.WriteLine("\nStudents marks displayed");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            // Display the options menu
+            selectMenu();
         }
         //Output marks 
         public void OutputMarks()
@@ -215,6 +232,55 @@ namespace ConsoleAppProject.App03
             }
 
             Mean = total / Marks.Length;
+        }
+        private void OutputGradeProfile()
+        {
+            Grades grades = Grades.X;
+            Console.WriteLine();
+            foreach (int count in GradeProfile) 
+            {
+                int percentage = count * 100/ Marks.Length;
+                Console.WriteLine($"Grade {grades} {percentage}% Count {count}");
+                grades++;
+            }
+            Console.WriteLine();
+        }
+        public void CalGradePro()
+        {
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+            foreach (int mark in Marks)
+            { 
+            Grades grade = ConvertToGrade(mark);
+            GradeProfile[(int)grade]++;
+            }
+            OutputGradeProfile();
+        }
+
+        public Grades ConvertToGrade(int mark)
+        {
+            if (mark >= 0 && mark < LowestGradeD)
+            {
+                return Grades.F;
+            }
+            else if (mark < LowestGradeC)
+            {
+                return Grades.D;
+            }
+            else if (mark < LowestGradeB)
+            {
+                return Grades.C;
+            }
+            else if (mark < LowestGradeA)
+            {
+                return Grades.B;
+            }
+            else
+            {
+                return Grades.A;
+            }
         }
 
         public void OutputStats()
