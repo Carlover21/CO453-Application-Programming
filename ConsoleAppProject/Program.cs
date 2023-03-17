@@ -32,6 +32,12 @@ namespace ConsoleAppProject
                 BMI calculator = new BMI();
                 calculator.Run();
             }
+            if (choice == "3")
+            {
+                StudentMarks calculator = new StudentMarks();
+                calculator.run();
+                
+            }
             else
             {
                 Console.WriteLine("The number is invalid !!!!");

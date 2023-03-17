@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlTypes;
 using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App03
@@ -20,9 +21,9 @@ namespace ConsoleAppProject.App03
 
         public void run()
         {
-            Console.WriteLine("    Welcome to Student mark app by Rayan Hamour    ";
-            ConnvertToMarks();
-            Name();
+            Console.WriteLine("    Welcome to Student mark app by Rayan Hamour    ");
+            ConvertToMarks();
+            Names();
             GetStudentMarks();
         }
         public string ConvertToMarks()
@@ -30,22 +31,22 @@ namespace ConsoleAppProject.App03
             switch (Marks)
             {
                 case int n when (n >= 70):
-                    return "A"
+                    return "A";
                 case int n when (n >= 60):
-                    return "B"
+                    return "B";
                 case int n when (n >= 50):
-                    return "C"
+                    return "C";
                 case int n when (n >= 40):
-                    return "D"
+                    return "D";
                 case int n when (n >= 0):
-                    return "F"
+                    return "F";
                 default:
                     return "Invalid Mark Please Try Again";
             }
         }
-        public string Name()
+        public string Names()
         {
-            return$ "{Name}  {Surname}";
+            return $"{Name}  {Surname}";
         }
         public void GetStudentMarks()
         {
@@ -53,13 +54,38 @@ namespace ConsoleAppProject.App03
             int min = int.MaxValue;
             int max = int.MinValue;
             double mean = 0;
-            for (int i=0; i<Max_Students; i++)
+            for (int i = 0; i < Max_Students; i++)
             {
                 Console.WriteLine("Enter the name of the student:   ");
                 string name = Console.ReadLine();
 
-                StudentMarks 
+                StudentMarks sg = new StudentMarks();
+                
+                    Name = name;
+            
+            
+                Console.WriteLine("Enter Student Marks:  ");
+                int marks = Convert.ToInt32(Console.ReadLine());
+                sg.Marks = Marks;
+                studentMarksList.Add(sg);
+
+                if (marks > max)
+                    max = marks;
+                if (min > max)
+                    min = max;
+                mean += marks;
             }
-        
+            mean = mean / studentMarksList.Count;
+
+            Console.WriteLine("The list of students and their grades:  ");
+            foreach (StudentMarks sg in studentMarksList) { }
+            {
+                Console.WriteLine($"{Names()} Grades: {ConvertToMarks()}");
+            }
+
+            Console.WriteLine("The avreage , minimum and maximum marks are:  ");
+            Console.WriteLine($"Mean: {mean}, Min: {min}, Max: {max}"); 
+
         }
     }
+}
