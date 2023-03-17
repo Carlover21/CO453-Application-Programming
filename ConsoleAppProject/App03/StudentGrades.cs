@@ -79,7 +79,7 @@ namespace ConsoleAppProject.App03
 
         {
 
-            Students = new string[3];
+            Students = new string[10];
 
             for (int i = 0; i < Students.Length; i++)
 
