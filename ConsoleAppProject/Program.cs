@@ -34,8 +34,8 @@ namespace ConsoleAppProject
             }
             if (choice == "3")
             {
-                StudentMarks calculator = new StudentMarks();
-                calculator.run();
+                StudentGrades stu = new StudentGrades();
+                stu.Run();
                 
             }
             else
