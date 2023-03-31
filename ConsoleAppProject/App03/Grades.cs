@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
@@ -12,19 +13,19 @@ namespace ConsoleAppProject.App03
     public enum Grades
     {
         [Display(Name = "Fail")]
-        [Description("Referred")]
+        [System.ComponentModel.Description("Referred")]
         F,
         [Display(Name = "III")]
-        [Description("BSc(Hons) Third Class")]
+        [System.ComponentModel.Description("BSc(Hons) Third Class")]
         D,
         [Display(Name = "II-2")]
-        [Description("BSc(Hons) Lower Second")]
+        [System.ComponentModel.Description("BSc(Hons) Lower Second")]
         C,
         [Display(Name = "II-1")]
-        [Description("BSc(Hons) Upper Second")]
+        [System.ComponentModel.Description("BSc(Hons) Upper Second")]
         B,
         [Display(Name = "1st")]
-        [Description("BSc(Hons) First Class")]
+        [System.ComponentModel.Description("BSc(Hons) First Class")]
         A,
         X
     }

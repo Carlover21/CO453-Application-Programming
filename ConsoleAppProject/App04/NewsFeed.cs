@@ -22,6 +22,9 @@ namespace ConsoleAppProject.App04
     {
         private readonly List<MessagePost> messages;
         private readonly List<PhotoPost> photos;
+        public string Author;
+
+        public List<Post> Posts { get; set; }
 
         ///<summary>
         /// Construct an empty news feed.
@@ -73,6 +76,30 @@ namespace ConsoleAppProject.App04
                 Console.WriteLine();   // empty line between posts
             }
         }
+
+        public void DisplayUser(string username)
+        {
+            // display all text posts by the given user
+            foreach (MessagePost message in messages)
+            {
+                if (message.Username == username)
+                {
+                    message.Display();
+                    Console.WriteLine();   // empty line between posts
+                }
+            }
+
+            // display all photos by the given user
+            foreach (PhotoPost photo in photos)
+            {
+                if (photo.Username == username)
+                {
+                    photo.Display();
+                    Console.WriteLine();   // empty line between posts
+                }
+            }
+        }
+
     }
 
 }

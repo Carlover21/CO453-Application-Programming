@@ -13,8 +13,8 @@ namespace ConsoleAppProject.App03
         public static string GetDescription(this Enum value)
         {
             var field = value.GetType().GetField(value.ToString());
-            var descriptionAttribute = field.GetCustomAttributes(typeof(DescriptionAttribute), false)
-                                            .FirstOrDefault() as DescriptionAttribute;
+            var descriptionAttribute = field.GetCustomAttributes(typeof(System.ComponentModel.DescriptionAttribute), false)
+                                            .FirstOrDefault() as System.ComponentModel.DescriptionAttribute;
 
             return descriptionAttribute?.Description ?? value.ToString();
         }

@@ -13,7 +13,7 @@ namespace ConsoleAppProject.Helpers
     /// <typeparam name="T"></typeparam>
     public static class EnumHelper<T>
     {
-        public static string GetDescription(Enum @enum)
+        /*public static string GetDescription(Enum @enum)
         {
             if (@enum == null)
                 return null;
@@ -24,7 +24,7 @@ namespace ConsoleAppProject.Helpers
             {
                 FieldInfo fi = @enum.GetType().GetField(@enum.ToString());
 
-                DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+                Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute[] attributes = (System.ComponentModel.DescriptionAttribute[])fi.GetCustomAttributes(typeof(Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute), false);
 
                 if (attributes.Length > 0)
                     description = attributes[0].Description;
@@ -34,7 +34,7 @@ namespace ConsoleAppProject.Helpers
             }
 
             return description;
-        }
+        }*/
 
         /// <summary>
         /// Found on Stack Overflow and works with any enumeration
@@ -73,16 +73,16 @@ namespace ConsoleAppProject.Helpers
             var gradeName = grade.GetAttribute<DisplayAttribute>().Name;
             Console.WriteLine($"Grade Name = {gradeName}");
 
-            var gradeDescription = grade.GetAttribute<DescriptionAttribute>().Description;
+            var gradeDescription = grade.GetAttribute<System.ComponentModel.DescriptionAttribute>().Description;
             Console.WriteLine($"Grade Description = {gradeDescription}");
 
-            string testDescription = EnumHelper<Grades>.GetDescription(grade);
+            //string testDescription = EnumHelper<Grades>.GetDescription(grade);
             string testName = EnumHelper<Grades>.GetName(grade);
 
             Console.WriteLine();
             Console.WriteLine("Discovered by Derek Using EnumHelper\n");
             Console.WriteLine($"Name = {testName}");
-            Console.WriteLine($"Description = {testDescription}");
+            //Console.WriteLine($"Description = {testDescription}");
 
         }
     }

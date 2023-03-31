@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -37,6 +38,12 @@ namespace ConsoleAppProject
                 StudentGrades stu = new StudentGrades();
                 stu.Run();
                 
+            }
+            if (choice == "4")
+            {
+                SocialNetwork app = new SocialNetwork();
+                app.DisplayMenu();
+
             }
             else
             {
