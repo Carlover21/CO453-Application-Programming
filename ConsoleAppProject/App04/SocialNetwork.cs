@@ -28,7 +28,7 @@ namespace ConsoleAppProject.App04
         public void DisplayMenu()
         {
             Console.Clear();
-            ConsoleHelper.OutputHeading("News Feed");
+            ConsoleHelper.OutputHeading("News Feed by Rayan Hamour");
             string[] choices = new string[]
             {
                 "Post Message", "Post Image",
